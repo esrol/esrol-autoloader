@@ -2,7 +2,7 @@
 module.exports = (function () {
     var fs = require ('fs'),
         path = require('path'),
-         lib = {};
+        lib = {};
     lib.fs = fs;
     lib.path = path;
     var currentFileName = path.basename(__filename);
