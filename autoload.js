@@ -11,7 +11,9 @@ module.exports = (function () {
         var x;
         for (x in modules) {
             try {
-                lib[x] = require(modules[x]);
+                if (modules.hasOwnProperty(x)) {
+                    lib[x] = require(modules[x]);                    
+                }
             } catch (err) {
                 console.log('Error with message: ' + err.message + ', Object: ' + x);
             } 
