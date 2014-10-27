@@ -1,6 +1,6 @@
 # Modules-Autoloader
 ## How to install
-npm install Modules-Autoloader 
+npm install modules-autoloader 
 or make a copy of autoload.js to your src folder
 ## How to use it
     var app = require('modules-autoloader');
