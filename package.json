@@ -1,5 +1,5 @@
 {
-    "name": "Modules-Autoloader",
+    "name": "modules-autoloader",
     "description": "Simple and functional package to autoload your libraries and modules",
     "homepage": "https://github.com/pertinax/modules-autoloader",
     "keywords": [

@@ -49,12 +49,15 @@ module.exports = (function () {
     }
 
     function getObjects(path, config) {
+        config ? true : config = {};
         if (lib.fs.existsSync(path)) {
+            config.filesToSkip ? true : config.filesToSkip = {};
             includeFromPath(path, config.filesToSkip);
         } else {
             console.log('Error: Directory "' + path + '" does not exist!');
             process.exit();
         }
+        config.modules ? true : config.modules = {};
         includeModules(config.modules);
         return lib;
     }
