@@ -1,3 +1,7 @@
 #To do
 - [ ] Set comments
-- [ ] Tests
+- [x] Build
+- [x] Tests
+- [ ] Coverage
+- [ ] Update readme
+- [ ] Update version

@@ -1,34 +1,49 @@
 {
-    "name": "modules-autoloader",
-    "description": "Simple and functional package to autoload your libraries and modules",
-    "homepage": "https://github.com/pertinax/modules-autoloader",
-    "keywords": [
-        "autoload",
-        "modules",
-        "util",
-        "functional",
-        "server"
-    ],
-    "author": {
-        "name": "Ivaylo Ivanov",
-        "email": "Ivchoyyyy@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/pertinax/modules-autoloader"
-    },
-    "main": "autoload.js",
-    "version": "1.1.1",
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "https://github.com/pertinax/modules-autoloader/LICENSE"
-        }
-    ],
-    "files": [
-        "autoload.js",
-        "README.md",
-        "TODO.md",
-        "LICENSE"
-    ]
+  "name": "modules-autoloader",
+  "description": "Simple and functional package to load your app",
+  "homepage": "https://github.com/ivaylopivanov/modules-autoloader",
+  "keywords": [
+    "autoload",
+    "modules",
+    "util",
+    "functional",
+    "server"
+  ],
+  "main": "index.js",
+  "author": {
+    "name": "Ivaylo Ivanov",
+    "email": "Ivchoyyyy@gmail.com"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha ./tests/test",
+    "test-cov": "node_modules/.bin/mocha ./tests/cover --require blanket --reporter html-cov > coverage.html"
+  },
+  "config": {
+    "blanket": {
+      "pattern": ["index.js"],
+      "data-cover-never": "node_modules"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ivaylopivanov/modules-autoloader"
+  },
+  "bugs": {
+    "url": "https://github.com/ivaylopivanov/modules-autoloader"
+  },  
+  "version": "2.0.0",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/ivaylopivanov/modules-autoloader/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 4.0.0"
+  },  
+  "devDependencies": {
+    "blanket": "^1.1.9",
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3"
+  }
 }
