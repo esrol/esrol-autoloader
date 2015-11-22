@@ -1,19 +1,10 @@
 {
-  "name": "modules-autoloader",
-  "description": "Simple and functional package to load your app",
-  "homepage": "https://github.com/ivaylopivanov/modules-autoloader",
-  "keywords": [
-    "autoload",
-    "modules",
-    "util",
-    "functional",
-    "server"
-  ],
+  "name": "esrol-autoloader",
+  "description": "later",
+  "homepage": "https://github.com/esrol/esrol-autoloader",
+  "keywords": [],
   "main": "index.js",
-  "author": {
-    "name": "Ivaylo Ivanov",
-    "email": "Ivchoyyyy@gmail.com"
-  },
+  "author": "Ivaylo Ivanov <ivaylo.ivanov.ipi@gmail.com>",
   "scripts": {
     "test": "node_modules/.bin/mocha ./tests/test",
     "test-cov": "node_modules/.bin/mocha ./tests/cover --require blanket --reporter html-cov > coverage.html"
@@ -26,18 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ivaylopivanov/modules-autoloader"
+    "url": "git://github.com/esrol/esrol-autoloader"
   },
   "bugs": {
-    "url": "https://github.com/ivaylopivanov/modules-autoloader"
+    "url": "https://github.com/esrol/esrol-autoloader"
   },  
-  "version": "2.0.0",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/ivaylopivanov/modules-autoloader/LICENSE"
-    }
-  ],
+  "version": "0.0.1",
+  "licenses": "MIT",
   "engines": {
     "node": ">= 4.0.0"
   },  
