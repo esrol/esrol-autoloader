@@ -23,7 +23,7 @@
     "url": "https://github.com/esrol/esrol-autoloader"
   },  
   "version": "0.0.1",
-  "licenses": "MIT",
+  "license": "MIT",
   "engines": {
     "node": ">= 4.0.0"
   },  
