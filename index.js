@@ -1,5 +1,4 @@
 'use strict';
-
 let fs = require ('fs');
 let path = require ('path');
 
@@ -7,7 +6,7 @@ module.exports = class Autoloader {
 
   constructor(config) {
     if (!config) {
-      throw new Error(`Modules autoloader expect object with settings as first 
+      throw new Error(`Modules autoloader expect object with settings as first
         param`);
     }
     if (!config.path) {
@@ -24,15 +23,15 @@ module.exports = class Autoloader {
     return {
       app: this._lib,
       namespaces: this._namespaces
-    };           
+    };
   }
-  
+
   _resolvePaths() {
     if (!fs.existsSync(this._applicationPath)) {
       let error = 'Directory "' + this._applicationPath + '" does not exist!';
       throw new Error(error);
-    }      
-  } 
+    }
+  }
 
   _onInitSetProperties(config) {
     this._config = config;
@@ -55,7 +54,7 @@ module.exports = class Autoloader {
       if (this._config.filesToSkip.indexOf(namespace) === -1) {
         this._getFileStatus(dirs[i], currentPath);
       }
-    }        
+    }
   }
 
   _getFileStatus(fileName, currentPath) {
@@ -68,16 +67,16 @@ module.exports = class Autoloader {
       this._includeFromPath(file);
     } else {
       let splitedFileName = fileName.split('.');
-      if (splitedFileName[1] && splitedFileName[1].toLowerCase() == 'js') {   
+      if (splitedFileName[1] && splitedFileName[1].toLowerCase() == 'js') {
         this._processFile(
-          this._lib, 
-          namespaces, 
-          currentPath, 
-          fileName, 
+          this._lib,
+          namespaces,
+          currentPath,
+          fileName,
           splitedFileName[0]
-        );                  
+        );
       }
-    }                  
+    }
   }
 
   _processFile(app, namespaces, currentPath, file, fileName) {
@@ -86,42 +85,47 @@ module.exports = class Autoloader {
       if (namespaces[i] === '') {
         namespaces.splice(i, 1);
       }
-    }    
+    }
     length = namespaces.length;
     for (let i = 0; i < length; i++) {
       let parentKey = namespaces[i];
       if (this._config.getAsObject && !app[parentKey]) {
-        app[parentKey] = {};                                        
+        app[parentKey] = {};
       }
       namespaces.splice(i, 1);
       if (namespaces.length) {
         // we need to move at least one level deeper to get the module
         return this._processFile(
-          app[parentKey], 
-          namespaces, 
-          currentPath, 
-          file, 
+          app[parentKey],
+          namespaces,
+          currentPath,
+          file,
           fileName
-        );           
+        );
       } else {
-        return this._includeFile(app, parentKey, currentPath, file, fileName);               
+        return this._includeFile(app, parentKey, currentPath, file, fileName);
       }
-    }       
+    }
+    if (!app[fileName]) {
+      currentPath = currentPath + path.sep + file;
+      app[fileName] = require(currentPath);
+      this._pushNamespace(fileName);
+    }
   }
 
   _includeFile(app, parentKey, currentPath, file, fileName) {
     currentPath = currentPath + path.sep + file;
     let namespace = this._getNamespaceWithDots(currentPath);
     let obj = require(currentPath);
-    this._pushNamespace(namespace);             
-    this._pushObjectsIntoApp(app, obj, parentKey, fileName); 
-    return app;        
-  } 
+    this._pushNamespace(namespace);
+    this._pushObjectsIntoApp(app, obj, parentKey, fileName);
+    return app;
+  }
 
   _getNamespaceWithDots(currentPath) {
-    // first replace the application path from the module path, 
+    // first replace the application path from the module path,
     // then replace the OS path separators (/ or \) with .
-    // finally, remove .js ext from the module path and 
+    // finally, remove .js ext from the module path and
     // return the namespace eg: core.routers.http
     return currentPath
     .replace(this._applicationPath, '')
@@ -129,7 +133,7 @@ module.exports = class Autoloader {
     .join('.')
     .slice(1)
     .slice(0, -3);
-  } 
+  }
 
   _pushNamespace(namespace) {
     if (this._config.getNamespaces) {
@@ -140,9 +144,8 @@ module.exports = class Autoloader {
   _pushObjectsIntoApp(app, obj, parentKey, fileName) {
     if (this._config.getAsObject) {
       app[parentKey][fileName] = {};
-      app[parentKey][fileName] = obj;       
+      app[parentKey][fileName] = obj;
     }
   }
-
 
 };
