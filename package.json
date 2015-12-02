@@ -1,13 +1,15 @@
 {
   "name": "esrol-autoloader",
   "description": "later",
+  "version": "0.0.2",
   "homepage": "https://github.com/esrol/esrol-autoloader",
   "keywords": [],
   "main": "index.js",
   "author": "Ivaylo Ivanov <ivaylo.ivanov.ipi@gmail.com>",
   "scripts": {
     "test": "node_modules/.bin/mocha ./tests/test",
-    "test-cov": "node_modules/.bin/mocha ./tests/cover --require blanket --reporter html-cov > coverage.html"
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha ./tests/test",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "config": {
     "blanket": {
@@ -21,15 +23,16 @@
   },
   "bugs": {
     "url": "https://github.com/esrol/esrol-autoloader"
-  },  
-  "version": "0.0.1",
+  },
   "license": "MIT",
   "engines": {
     "node": ">= 4.0.0"
-  },  
+  },
   "devDependencies": {
-    "blanket": "^1.1.9",
     "chai": "^3.4.0",
+    "coveralls": "^2.11.4",
+    "debug": "^2.2.0",
+    "istanbul": "^0.4.1",
     "mocha": "^2.3.3"
   }
 }
