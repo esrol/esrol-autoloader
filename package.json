@@ -1,6 +1,6 @@
 {
   "name": "esrol-autoloader",
-  "description": "later",
+  "description": "An Autoloader Class for autoloading files.",
   "version": "0.0.2",
   "homepage": "https://github.com/esrol/esrol-autoloader",
   "keywords": [],
