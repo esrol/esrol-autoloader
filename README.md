@@ -10,6 +10,11 @@ An Autoloader Class for automatically including files.
 ```sh
 $ npm install --save esrol-autoloader
 ```
+## Node Version Compatibility
+
+| Node Version |
+| ---- |
+| >= 4.x |
 
 ## Usage
 
