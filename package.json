@@ -1,21 +1,15 @@
 {
   "name": "esrol-autoloader",
-  "description": "An Autoloader Class for autoloading files.",
-  "version": "0.0.2",
+  "description": "An Autoloader Class for automatically including files.",
+  "version": "0.0.3",
   "homepage": "https://github.com/esrol/esrol-autoloader",
-  "keywords": [],
+  "keywords": ["module", "autoloading", "esrol", "autoloader"],
   "main": "index.js",
   "author": "Ivaylo Ivanov <ivaylo.ivanov.ipi@gmail.com>",
   "scripts": {
     "test": "node_modules/.bin/mocha ./tests/test",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha ./tests/test",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
-  },
-  "config": {
-    "blanket": {
-      "pattern": ["index.js"],
-      "data-cover-never": "node_modules"
-    }
   },
   "repository": {
     "type": "git",
