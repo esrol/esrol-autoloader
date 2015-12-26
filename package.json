@@ -1,7 +1,7 @@
 {
   "name": "esrol-autoloader",
   "description": "An Autoloader Class for automatically including files.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "https://github.com/esrol/esrol-autoloader",
   "keywords": ["module", "autoloading", "esrol", "autoloader"],
   "main": "index.js",

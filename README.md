@@ -5,6 +5,8 @@
 # esrol-autoloader
 An Autoloader Class for automatically including files.
 
+*Part of [Esrol](https://github.com/esrol/esrol)*
+
 ## Installation
 
 ```sh
@@ -45,10 +47,10 @@ An Autoloader Class for automatically including files.
 
 Any contribution will be highly appreciated. Just make sure that:
 
-1.Your code works.
-2. You have 100% successful tests coverage.
-3. You have comments in your code.
-4. Follows eslint config. Exceptions are possible where that make sense.
+1.Your code works.  
+2. You have 100% successful tests coverage.  
+3. You have comments in your code.  
+4. Follows eslint config. Exceptions are possible where that make sense.  
 
 ## Tests
 
