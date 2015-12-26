@@ -41,6 +41,15 @@ console.log(folders);
 ### new Autoloader()
 An Autoloader Class for automatically including files.
 
+## Contriubtion
+
+Any contribution will be highly appreciated. Just make sure that:
+
+1.Your code works.
+2. You have 100% successful tests coverage.
+3. You have comments in your code.
+4. Follows eslint config. Exceptions are possible where that make sense.
+
 ## Tests
 
   To run the test suite, first install the dependencies, then run `npm test`:
