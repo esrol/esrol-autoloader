@@ -1,5 +1,5 @@
 'use strict';
-let Autoloader = require ('esrol-autoloader');
+const Autoloader = require('esrol-autoloader');
 let settings = {
   getNamespaces: true,
   getAsObject: true,

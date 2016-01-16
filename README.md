@@ -22,12 +22,12 @@ $ npm install --save esrol-autoloader
 
 ```js
 'use strict';
-let Autoloader = require ('esrol-autoloader');
+const Autoloader = require('esrol-autoloader');
 let settings = {
-  getNamespaces: true, //boolean - get path as namespace
-  getAsObject: true, // boolean - get file as object
-  path: __dirname + '/app', // path to file
-  filesToSkip: ['controllers.skipMe', 'routes.skipMe'] // array - which files 
+  getNamespaces: true,
+  getAsObject: true,
+  path: __dirname + '/app',
+  filesToSkip: ['controllers.skipMe', 'routes.skipMe']
 };
 let folders = new Autoloader(settings);
 console.log(folders);
